@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(Arquillian.class)
-public class CustomerServiceIT extends TestBaseClass {
+public class CustomerServiceTest extends TestBaseClass {
 
     @Inject
     CustomerService service;
