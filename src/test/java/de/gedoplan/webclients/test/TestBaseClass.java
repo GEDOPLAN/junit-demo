@@ -1,5 +1,6 @@
 package de.gedoplan.webclients.test;
 
+import de.gedoplan.webclients.test.dbunit.DBUnitBaseClass;
 import java.io.File;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -13,7 +14,7 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
  *
  * @author Dominik Mathmann
  */
-public class TestBaseClass {
+public class TestBaseClass extends DBUnitBaseClass {
 
     /**
      * Erzeugt Deyployment aus packetiertem WAR.
@@ -29,7 +30,12 @@ public class TestBaseClass {
                 .as(WebArchive.class)
                 .addPackage("de.gedoplan.webclients.test")
                 .addPackage("de.gedoplan.webclients.testhelper")
+                .addPackage("de.gedoplan.webclients.test.dbunit")
+                .addAsResource(new File("src/test/resources/dbunit_full.xml"))
                 .addAsWebInfResource(new File("src/test/resources/beans.xml"));
+
+        deployment.delete("META-INF/persistence.xml");
+        deployment.addAsResource("test-persistence.xml", "META-INF/persistence.xml");
 
         return deployment;
     }
