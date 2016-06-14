@@ -107,6 +107,14 @@
         </repository>
     </repositories>
     
+    
+    
+    <!-- 
+        Konfiguration surefire Plugin .
+        Bei unserem Deployment arbeiten wir mit dem packetierten WAR-File, aus dem Grund
+        führen wir die Tests erst nach dem Maven-Package aus 
+        und includieren für unseren Test alle Dateien mit der Endung "Test"
+    -->
     <build>
         <finalName>junit-demo</finalName> 
         <plugins>

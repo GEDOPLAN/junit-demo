@@ -9,6 +9,15 @@ import javax.annotation.security.RunAs;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+/**
+ * Helfer-EJB die wir dafür benutzen unsere Service-Methoden unter Verwendung
+ * einer bestimmten Rolle auf zu rufen.
+ *
+ * Zusätzlich stellt dieser Caller ein konkretes Benutzerobjekt zur Verfügung,
+ * welches unserem Test-UserService zur Verfügung gestellt wird.
+ *
+ * @author Dominik Mathmann
+ */
 @Stateless
 @RunAs("customer")
 @PermitAll

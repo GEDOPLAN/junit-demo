@@ -7,13 +7,19 @@ import de.gedoplan.webclients.model.dto.QuerySettings;
 import de.gedoplan.webclients.test.TestBaseClass;
 import de.gedoplan.webclients.testhelper.CustomerCaller;
 import java.util.concurrent.Callable;
-import javax.ejb.EJBAccessException;
 import javax.inject.Inject;
 import org.jboss.arquillian.junit.Arquillian;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+/**
+ * Testfälle für OrderSerice.
+ *
+ * Aufrufe erfolgen als "customer".
+ *
+ * @author Dominik Mathmann
+ */
 @RunWith(Arquillian.class)
 public class OrderServiceCustomerTest extends TestBaseClass {
 

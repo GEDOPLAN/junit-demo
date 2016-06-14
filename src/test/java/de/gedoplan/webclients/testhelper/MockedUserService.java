@@ -6,8 +6,15 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 
 /**
+ * Unser "echter" UserService verwendet den Request-Context der Webanwendung um
+ * auf den aktuellen User zugreifeb zu können. Unsere Tests setzen auf
+ * Service-Level auf und laufen somit ohne Request > wir benötigen einen
+ * alternativen Ansatz um den aktuellen Benutzer zu liefern.
  *
- * @author dmathmann
+ * Bei dieser Klasse handelt es sich um eine "Alterantive" die in der beans.xml
+ * bei unseren Tests aktiviert wird.
+ *
+ * @author Dominik Mathmann
  */
 @Alternative
 @Stateless

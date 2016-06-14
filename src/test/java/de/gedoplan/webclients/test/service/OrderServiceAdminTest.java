@@ -11,6 +11,13 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+/**
+ * Testfälle für OrderSerice.
+ *
+ * Aufrufe erfolgen als "admin".
+ *
+ * @author Dominik Mathmann
+ */
 @RunWith(Arquillian.class)
 public class OrderServiceAdminTest extends TestBaseClass {
 
