@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>gedoplan, jax-demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="style" name="template.css" />
+        <link rel="icon" href="../resources/img/gedoplan.png"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGroup styleClass="login-panel" layout="block">
+                <p:panel id="basic" header="#{msg.login_title}">       
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <h:outputLabel value="#{msg.login_name}"></h:outputLabel>
+                        <h:inputText value="#{authenticateController.loginname}"></h:inputText>
+                        <h:outputLabel value="#{msg.login_password}"></h:outputLabel>
+                        <h:inputSecret value="#{authenticateController.password}"></h:inputSecret>
+                        <h:commandButton action="#{authenticateController.login}" value="#{msg.login_submit}" />
+                    </h:panelGrid>
+                </p:panel>
+            </h:panelGroup>
+        </h:form>
+        <p:growl id="growl" showDetail="false" sticky="false" life="3000" />  
+    </h:body>
+</html>
+

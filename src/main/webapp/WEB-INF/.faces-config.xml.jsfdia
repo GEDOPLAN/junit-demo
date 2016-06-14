@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::jsf#index.xhtml" NAME="output"
+    PATH="jsf/index.xhtml" TARGET="rules:jsf#index.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="login::jsf#login.xhtml" NAME="output1"
+    PATH="jsf/login.xhtml" TARGET="rules:jsf#login.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="customers::jsf#pages#customer#customers.xhtml" NAME="output2"
+    PATH="jsf/pages/customer/customers.xhtml"
+    TARGET="rules:jsf#pages#customer#customers.xhtml" TITLE="customers" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="customer-details::jsf#pages#customer#customer_details.xhtml"
+    NAME="output3" PATH="jsf/pages/customer/customer_details.xhtml"
+    TARGET="rules:jsf#pages#customer#customer_details.xhtml"
+    TITLE="customer-details" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="customer-details::jsf#pages#customer#customer-details.xhtml"
+    NAME="output4" PATH="jsf/pages/customer/customer-details.xhtml"
+    TARGET="rules:jsf#pages#customer#customer-details.xhtml"
+    TITLE="customer-details" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="orders::jsf#pages#order#orders.xhtml"
+    NAME="output5" PATH="jsf/pages/order/orders.xhtml"
+    TARGET="rules:jsf#pages#order#orders.xhtml" TITLE="orders" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="notallowed::jsf#index.xhtml" NAME="output6"
+    PATH="jsf/index.xhtml" TARGET="rules:jsf#index.xhtml"
+    TITLE="notallowed" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:jsf#pages#customer#customer_details.xhtml"
+  PATH="jsf/pages/customer/customer_details.xhtml" SHAPE="304,337,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:jsf#pages#customer#customer_details.xhtml:0"
+   NAME="item" PATH="jsf/pages/customer/customer_details.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::jsf#index.xhtml" NAME="output"
+    PATH="jsf/index.xhtml" TARGET="rules:jsf#index.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="back::jsf#pages#customer#customers.xhtml"
+    NAME="output1" PATH="jsf/pages/customer/customers.xhtml"
+    TARGET="rules:jsf#pages#customer#customers.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:jsf#index.xhtml" PATH="jsf/index.xhtml"
+  SHAPE="544,321,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:jsf#pages#customer#customers.xhtml"
+  PATH="jsf/pages/customer/customers.xhtml" SHAPE="544,465,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:jsf#pages#customer#customer-details.xhtml"
+  PATH="jsf/pages/customer/customer-details.xhtml" SHAPE="304,481,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:jsf#pages#order#orders.xhtml"
+  PATH="jsf/pages/order/orders.xhtml" SHAPE="304,593,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:jsf#login.xhtml" PATH="jsf/login.xhtml"
+  SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

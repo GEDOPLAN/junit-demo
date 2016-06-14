@@ -1,0 +1,15 @@
+/src/main/angular/node_modules/
+/src/main/angular/app/bower_components/
+/faces-config.NavData
+/nb-configuration.xml
+/src/main/angular/dist/
+/target/
+/src/main/angular/.tmp/
+/src/main/angular/nbproject/private/
+/src/main/angular/nbproject/
+/.settings/
+/bin/
+/.classpath
+/.project
+/.tern-project
+/nbproject/

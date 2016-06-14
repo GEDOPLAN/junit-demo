@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/jsf/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/jsf/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>customers</from-outcome>
+            <to-view-id>/jsf/pages/customer/customers.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>customer-details</from-outcome>
+            <to-view-id>/jsf/pages/customer/customer_details.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>customer-details</from-outcome>
+            <to-view-id>/jsf/pages/customer/customer-details.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>orders</from-outcome>
+            <to-view-id>/jsf/pages/order/orders.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>notallowed</from-outcome>
+            <to-view-id>/jsf/notallowed.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>jsf/pages/customer/customer_details.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/jsf/index.xhtml</to-view-id>
+            <if>#{userController.customer}</if>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/jsf/pages/customer/customers.xhtml</to-view-id>
+            <if>#{!userController.customer}</if>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <factory>
+        <exception-handler-factory>
+            de.gedoplan.webclients.jsf.system.ApplicationExceptionHandlerFactory
+        </exception-handler-factory>
+    </factory>
+    
+    <application>
+        <resource-bundle>
+            <base-name>de.gedoplan.resources.messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+    </application>
+    
+      <application>
+        <resource-handler>org.omnifaces.resourcehandler.CombinedResourceHandler</resource-handler>
+    </application>
+</faces-config>

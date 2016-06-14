@@ -1,0 +1,79 @@
+.ui-menu-list .nav-item{
+    margin-top: 24px;
+    margin-left: 25px;
+    font-size: 1.5em;
+}
+
+.login-panel{
+    width: 30%;
+    padding-left: 30%;
+}
+
+.header-menu-options li {
+    width: 100% !important;
+}
+
+.ui-menu.ui-menubar.header-menu-options{
+    padding: 5px;
+}
+
+.component-header{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+}
+
+.component-header div:first-child{
+    width: 60%;
+}
+
+.component-header div:last-child{
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+    vertical-align: middle;
+}
+
+.ui-panel-title{
+    margin: 0px !important;
+}
+
+.input-form{
+    width: 100%;
+    padding-left: 10%;
+}
+
+.ui-grid-row  input{
+    width: 98%;
+}
+
+.ui-grid-row {
+    padding-left: 10px;
+    padding-bottom: 1em;
+}
+
+.ui-grid-row>div{
+    padding-right: 5%;
+}
+
+.ui-panel-footer > button{
+    margin-right: 5%;
+}
+
+.ui-state-error{
+    color: black !important;
+    background-color: white !important;
+}
+
+.highlight{
+    border-radius: 20%;
+    padding: 3px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: white;
+    overflow:hidden;
+    font-size: small;
+
+    background: #4679BD; 
+}
+

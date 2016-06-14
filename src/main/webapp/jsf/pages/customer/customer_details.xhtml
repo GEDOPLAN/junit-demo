@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+        <ui:composition template="../../template.xhtml">
+            <ui:define name="meta">
+                <f:metadata>
+                    <f:viewParam name="id" value="#{customerDetailController.customerID}" />
+                </f:metadata>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                    <p:panel id="basic" style="margin-bottom:20px">
+                        <f:facet name="header">
+                            <div class="component-header">
+                                <div>#{customerDetailController.customer.companyName} (#{customerDetailController.customer.customerID})</div>
+                                <div>#{msg.customer_discount} <span class="highlight">#{customerDetailController.customerDiscount.discount}%</span></div>
+                            </div>
+                        </f:facet>
+                        <div class="ui-grid ui-grid-responsive">
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-4" >
+                                    <p:outputLabel for="customerID" value="#{msg.customer_customerID}" />
+                                    <p:inputText id="customerID" value="#{customerDetailController.customer.customerID}" readonly="true"/>
+                                </div>
+                                <div class="ui-grid-col-4" >
+                                    <p:outputLabel for="companyName" value="#{msg.customer_companyName}" />
+                                    <p:inputText id="companyName"  value="#{customerDetailController.customer.companyName}"/>
+                                    <p:message for="companyName" showDetail="false" showSummary="true"/>
+                                </div>
+                                <div class="ui-grid-col-4" >
+                                    <p:outputLabel for="contactName" value="#{msg.customer_contactName}" />
+                                    <p:inputText id="contactName" value="#{customerDetailController.customer.contactName}" />
+                                </div>
+                            </div>
+
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-4" >
+                                    <p:outputLabel for="address" value="#{msg.customer_address}" />
+                                    <p:inputText id="address" value="#{customerDetailController.customer.address}" />
+                                </div>
+                                <div class="ui-grid-col-2">
+                                    <p:outputLabel for="postalCode" value="#{msg.customer_postalCode}" />
+                                    <p:inputText id="postalCode" value="#{customerDetailController.customer.postalCode}" />
+                                </div>
+                                <div class="ui-grid-col-6" >
+                                    <p:outputLabel for="city" value="#{msg.customer_city}" />
+                                    <p:inputText id="city" value="#{customerDetailController.customer.city}" />
+                                </div>
+                            </div>
+
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-4" >
+                                    <p:outputLabel for="region" value="#{msg.customer_region}" />
+                                    <p:inputText id="region" value="#{customerDetailController.customer.region}" />
+                                </div>
+                                <div class="ui-grid-col-2" >
+                                    <p:outputLabel for="country" value="#{msg.customer_country}" />
+                                    <p:inputText id="country" value="#{customerDetailController.customer.country}" />
+                                </div>
+                                <div class="ui-grid-col-2" >
+                                    <p:outputLabel for="phone" value="#{msg.customer_phone}" />
+                                    <p:inputText id="phone" value="#{customerDetailController.customer.phone}" />
+                                </div>
+                                <div class="ui-grid-col-2" >
+                                    <p:outputLabel for="fax" value="#{msg.customer_fax}" />
+                                    <p:inputText id="fax" value="#{customerDetailController.customer.fax}" />
+                                </div>
+                            </div>
+                        </div>
+                        <f:facet name="footer">
+                            <p:commandButton value="#{msg.save}" action="#{customerDetailController.saveCustomer()}" ajax="true"  update=":growl @form"/>
+                            <p:commandButton value="#{msg.cancel}" immediate="true" action="back"/>
+                        </f:facet>
+                    </p:panel>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

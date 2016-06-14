@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+        <ui:composition template="../../template.xhtml">
+            <ui:define name="content">
+                <h:form id="form">
+                    <p:dataTable var="customer" value="#{customerController}" paginator="true" rows="10" lazy="true" 
+                                 paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+                                 rowsPerPageTemplate="10,50,100"  id="customerTable" >
+
+                        <p:column headerText="#{msg.customer_customerID}" sortBy="#{customer.customerID}">
+                            <h:link value="#{customer.customerID}" outcome="customer-details">
+                                  <f:param name="id" value="#{customer.customerID}"/>
+                            </h:link>
+                        </p:column>
+                        <p:column headerText="#{msg.customer_companyName}" sortBy="#{customer.companyName}">
+                            <h:outputText value="#{customer.companyName}" />
+                        </p:column>
+                        <p:column headerText="#{msg.customer_contactName}" sortBy="#{customer.contactName}">
+                            <h:outputText value="#{customer.contactName}" />
+                        </p:column>
+                        <p:column headerText="#{msg.customer_address}" sortBy="#{customer.address}">
+                            <h:outputText value="#{customer.address}" />
+                        </p:column>
+                        <p:column headerText="#{msg.customer_postalCode}" sortBy="#{customer.postalCode}">
+                            <h:outputText value="#{customer.postalCode}" />
+                        </p:column>
+                        <p:column headerText="#{msg.customer_city}" sortBy="#{customer.city}">
+                            <h:outputText value="#{customer.city}" />
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

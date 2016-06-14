@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>gedoplan, Example Web Client</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="icon" href="../resources/img/gedoplan.png"/>
+    </h:head>
+
+    <ui:insert name="meta"></ui:insert>
+    <h:body>
+
+        <h:form>  
+            <p:growl id="messages"/>
+
+            <p:menubar>
+                <p:menuitem outcome="customers">
+                    <h:link>
+                        <p:graphicImage name="jsf.png" library="img" height="60px;"/>
+                    </h:link>
+                </p:menuitem>
+
+                <p:menuitem value="#{msg.menu_customer}" outcome="customers" class="nav-item" rendered="#{userController.admin}"/>
+                <p:menuitem value="#{msg.menu_orders}" outcome="orders" class="nav-item"/>
+                <p:menuitem value="#{msg.menu_customerdetails}" outcome="customer-details" class="nav-item" rendered="#{userController.customer}">
+                    <f:param name="id" value="#{userController.currentUser.customerID}"/>
+                </p:menuitem>
+
+                <f:facet name="options">
+                    <p:menubar styleClass="header-menu-options">
+                        <p:submenu label="#{userController.currentUser.login}">
+                            <p:menuitem value="#{msg.logout}" action="#{authenticateController.logout}" />
+                        </p:submenu>
+                    </p:menubar>
+                </f:facet>
+            </p:menubar>
+        </h:form>
+
+        <h:panelGroup id="content">
+            <ui:insert name="content"></ui:insert>
+        </h:panelGroup>
+
+        <p:growl id="growl" showDetail="false" sticky="false" life="3000" />  
+
+        <f:facet name="last">
+            <h:outputStylesheet library="style" name="template.css" />
+        </f:facet>
+    </h:body>
+</html>
