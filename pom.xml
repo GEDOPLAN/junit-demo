@@ -59,6 +59,7 @@
             <version>2.2</version>
         </dependency>
         
+<!--Wird nur benötigt um DBUnit Daten mittels Main-Klasse zu generrieren oder wenn DBUnit selber die Verbindung aufbauen soll-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -70,7 +71,7 @@
             <artifactId>h2</artifactId>
             <version>1.4.192</version>
         </dependency>
-        <!-- -->
+         
         
         <dependency>
             <groupId>org.hibernate</groupId>
