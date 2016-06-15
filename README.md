@@ -8,6 +8,8 @@ Bestandandteile:
 - JUnit
 - JAAS, Testen von gesicherten EJB Services ( @RolesAllowed )
 - Maven Setup
+- DBUnit Testdaten Bereitstellung
+- Jailer Testdaten Ermittlung
 
 Konfiguration:
  - northwind-Beispieldatenbank als Grundlage ( https://code.google.com/archive/p/northwindextended/downloads )
