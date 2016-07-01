@@ -62,7 +62,7 @@
             <version>2.2</version>
         </dependency>
         
-<!--Wird nur benötigt um DBUnit Daten mittels Main-Klasse zu generrieren oder wenn DBUnit selber die Verbindung aufbauen soll-->
+        <!--Wird nur benötigt um DBUnit Daten mittels Main-Klasse zu generrieren oder wenn DBUnit selber die Verbindung aufbauen soll-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -142,24 +142,14 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
+                <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.19.1</version>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
                 <executions>
                     <execution>
-                        <id>unittests</id>
-                        <phase>package</phase>
                         <goals>
-                            <goal>test</goal>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
                         </goals>
-                        <configuration>
-                            <skip>false</skip>
-                            <includes>
-                                <include>**/**/**/*Test.java</include>
-                            </includes>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
