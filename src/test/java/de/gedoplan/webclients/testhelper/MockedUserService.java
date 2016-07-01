@@ -2,6 +2,7 @@ package de.gedoplan.webclients.testhelper;
 
 import de.gedoplan.webclients.model.User;
 import de.gedoplan.webclients.service.UserServiceInterface;
+import javax.annotation.Priority;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 
@@ -17,6 +18,7 @@ import javax.enterprise.inject.Alternative;
  * @author Dominik Mathmann
  */
 @Alternative
+@Priority(99) // alternativ dazu kann die Alternative auch über die beans.xml aktiviert werden
 @Stateless
 public class MockedUserService implements UserServiceInterface {
 
