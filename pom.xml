@@ -56,6 +56,13 @@
             <scope>test</scope>
         </dependency>
         
+        <!-- ShrinkWrap MavenPOM-Resolver -->
+        <dependency>
+            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <artifactId>shrinkwrap-resolver-impl-maven-archive</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
         <dependency>
             <groupId>dbunit</groupId>
             <artifactId>dbunit</artifactId>

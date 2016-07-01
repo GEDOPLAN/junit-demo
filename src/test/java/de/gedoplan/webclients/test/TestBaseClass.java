@@ -5,8 +5,8 @@ import java.io.File;
 import java.util.UUID;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.importer.ZipImporter;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.jboss.shrinkwrap.resolver.api.maven.archive.importer.MavenImporter;
 
 /**
  * Basis-Klass für alle unsere Tests die das Deployment bereit stellt. In diesem
@@ -24,19 +24,17 @@ public class TestBaseClass extends DBUnitBaseClass {
      */
     @Deployment()
     public static WebArchive createDeployment() {
-        WebArchive deployment = ShrinkWrap
-                .create(WebArchive.class, UUID.randomUUID().toString() + "_junit-demo-test.war")
-                .as(ZipImporter.class)
-                .importFrom(new File("target/junit-demo.war"))
-                .as(WebArchive.class)
+        File pomFile = new File("pom.xml");
+        WebArchive deployment = ShrinkWrap.create(MavenImporter.class, UUID.randomUUID().toString() + "_junit-demo-test.war")
+                .loadPomFromFile(pomFile)
+                .importBuildOutput().as(WebArchive.class);
+
+        deployment
                 .addPackage("de.gedoplan.webclients.test")
                 .addPackage("de.gedoplan.webclients.testhelper")
                 .addPackage("de.gedoplan.webclients.test.dbunit")
                 .addAsResource(new File("src/test/resources/dbunit_full.xml"))
-                .addAsWebInfResource(new File("src/test/resources/beans.xml"));
-
-        deployment.delete("META-INF/persistence.xml"); // nötig?
-        deployment.addAsResource("test-persistence.xml", "META-INF/persistence.xml");
+                .addAsResource("test-persistence.xml", "META-INF/persistence.xml");
 
         return deployment;
     }

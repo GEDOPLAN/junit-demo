@@ -4,7 +4,7 @@ import de.gedoplan.webclients.model.Customer;
 import de.gedoplan.webclients.model.dto.QueryResult;
 import de.gedoplan.webclients.model.dto.QuerySettings;
 import de.gedoplan.webclients.service.CustomerService;
-;
+
 import de.gedoplan.webclients.test.TestBaseClass;
 import javax.inject.Inject;
 import org.jboss.arquillian.junit.Arquillian;
